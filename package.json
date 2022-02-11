@@ -1,0 +1,36 @@
+{
+  "name": "test-ts-tip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "tsc": "tsc ./other/deep/control.js --allowJs --outDir dist-tsc --module esnext",
+    "tsc:base": "tsc ./other/deep/baseUrl.js --allowJs --outDir dist-tsc --module esnext",
+    "tsc:map": "tsc ./other/deep/importMap.js --allowJs --outDir dist-tsc --module esnext",
+    "node": "node ./other/deep/control.js",
+    "node:base": "node ./other/deep/baseUrl.js",
+    "node:map": "node ./other/deep/importMap.js",
+    "rollup": "rollup ./other/deep/control.js",
+    "rollup:base": "rollup ./other/deep/baseUrl.js",
+    "rollup:map": "rollup -c rollup.config.js ./other/deep/importMap.js",
+    "webpack": "webpack ./other/deep/control.js",
+    "webpack:base": "webpack ./other/deep/baseUrl.js",
+    "webpack:map": "webpack ./other/deep/importMap.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "rollup": "^2.67.2",
+    "typescript": "^4.5.5",
+    "webpack": "^5.68.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
+  },
+  "imports": {
+    "#one": "./src/one.js"
+  }
+}
